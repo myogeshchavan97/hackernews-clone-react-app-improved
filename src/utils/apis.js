@@ -3,8 +3,8 @@ import { BASE_API_URL } from './constants';
 
 const getStory = async (id) => {
   try {
-    const story = await axios.get(`${BASE_API_URL}/item/${id}.json`);
-    return story;
+    const { data } = await axios.get(`${BASE_API_URL}/item/${id}.json`);
+    return data;
   } catch (error) {
     console.log('Error while getting a story.');
   }
