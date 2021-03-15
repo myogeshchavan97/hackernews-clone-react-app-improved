@@ -12,7 +12,7 @@ const useDataFetcher = (type) => {
         .then((stories) => {
           setStories((prevState) => ({
             ...prevState,
-            [type]: stories
+            [type]: stories,
           }));
           setIsLoading(false);
         })
@@ -20,7 +20,7 @@ const useDataFetcher = (type) => {
           setIsLoading(false);
         });
     }
-  }, [type]);
+  }, [type, stories]);
 
   return { isLoading, stories: stories[type] };
 };
